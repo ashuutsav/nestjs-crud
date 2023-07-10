@@ -1,5 +1,6 @@
 import { IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { Category } from '../schema/book.schema';
+import { Author } from 'src/author/schema/author.schema';
 
 export class CreateBookDto {
   @IsNotEmpty()
@@ -11,8 +12,8 @@ export class CreateBookDto {
   readonly description: string;
 
   @IsNotEmpty()
-  @IsString()
-  readonly author: string;
+  @IsNumber()
+  readonly authorId: Author;
 
   @IsNotEmpty()
   @IsNumber()

@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Author } from 'src/author/schema/author.schema';
 
 export enum Category {
   ADVENTURE = 'Adventure',
@@ -15,8 +16,8 @@ export class Book {
   title: string;
   @Prop()
   description: string;
-  @Prop()
-  author: string;
+  @Prop({ type: Author })
+  authorId: Author;
   @Prop()
   price: number;
   @Prop()

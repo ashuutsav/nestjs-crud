@@ -35,12 +35,9 @@ export class BookController {
     @Param('id')
     id: string,
   ): Promise<Book> {
-    // if (!Book) {
-    // }
     try {
       return this.bookService.findById(id);
     } catch (err) {
-      //   throw new NotFoundException('Book not found');
       throw err;
     }
   }

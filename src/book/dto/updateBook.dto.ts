@@ -6,6 +6,7 @@ import {
   isString,
 } from 'class-validator';
 import { Category } from '../schema/book.schema';
+import { Author } from 'src/author/schema/author.schema';
 
 export class updateBookDto {
   @IsOptional()
@@ -15,8 +16,8 @@ export class updateBookDto {
   @IsString()
   readonly description: string;
   @IsOptional()
-  @IsString()
-  readonly author: string;
+  @IsNumber()
+  readonly authorId: Author;
   @IsOptional()
   @IsNumber()
   readonly price: number;
