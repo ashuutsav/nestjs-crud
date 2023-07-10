@@ -20,7 +20,7 @@ export class AuthorService {
     return res;
   }
 
-  async findById(id: number): Promise<Author> {
+  async findById(id: string): Promise<Author> {
     try {
       const res = await this.AuthorModel.findById(id);
       return res;
@@ -29,7 +29,7 @@ export class AuthorService {
     }
   }
 
-  async updateById(id: number, author: Author) {
+  async updateById(id: string, author: Author) {
     const res = await this.AuthorModel.findByIdAndUpdate(id, author, {
       new: true,
       runValidators: true,
@@ -37,7 +37,7 @@ export class AuthorService {
     return res;
   }
 
-  async deleteById(id: number) {
+  async deleteById(id: string) {
     const res = await this.AuthorModel.findByIdAndDelete(id);
     return res;
   }

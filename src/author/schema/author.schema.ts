@@ -1,10 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Types } from 'mongoose';
 
-@Schema({
-  timestamps: true,
-})
+@Schema()
 export class Author {
+  @Prop()
+  id: string;
   @Prop()
   name: string;
 }

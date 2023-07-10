@@ -36,7 +36,7 @@ export class AuthorController {
   @Get(':id')
   async getAuthor(
     @Param('id')
-    id: number,
+    id: string,
   ): Promise<Author> {
     try {
       return this.authorService.findById(id);
@@ -48,7 +48,7 @@ export class AuthorController {
   @Put(':id')
   async updateBook(
     @Param('id')
-    id: number,
+    id: string,
     @Body()
     author: AddAuthorDto,
   ): Promise<Author> {
@@ -61,7 +61,7 @@ export class AuthorController {
   @Delete(':id')
   async deleteAuthor(
     @Param('id')
-    id: number,
+    id: string,
   ): Promise<Author> {
     if (!Author) {
       throw new NotFoundException('Book not found');

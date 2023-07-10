@@ -25,7 +25,7 @@ export class BookController {
   @Post()
   async createBook(
     @Body()
-    book: CreateBookDto,
+    book: Book,
   ): Promise<Book> {
     return this.bookService.create(book);
   }
@@ -47,7 +47,7 @@ export class BookController {
     @Param('id')
     id: string,
     @Body()
-    book: updateBookDto,
+    book: Book,
   ): Promise<Book> {
     if (!Book) {
       throw new NotFoundException('Book not found');

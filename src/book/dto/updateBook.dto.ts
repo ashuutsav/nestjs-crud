@@ -9,6 +9,9 @@ import { Category } from '../schema/book.schema';
 import { Author } from 'src/author/schema/author.schema';
 
 export class updateBookDto {
+  @IsString()
+  readonly id: string;
+
   @IsOptional()
   @IsString()
   readonly title: string;
