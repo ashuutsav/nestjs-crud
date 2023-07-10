@@ -22,7 +22,7 @@ export class BookService {
 
   async findById(id: string): Promise<Book> {
     try {
-      const res = await this.bookModel.findById(id);
+      const res = await this.bookModel.findById(id).populate('id').exec();
       return res;
     } catch (err) {
       throw new NotFoundException('Book not found');
